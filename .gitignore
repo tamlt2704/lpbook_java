@@ -1,0 +1,5 @@
+.gradle
+gradle
+.idea
+app/build
+solvermodel/build
