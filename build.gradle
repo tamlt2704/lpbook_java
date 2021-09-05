@@ -1,5 +1,6 @@
 plugins {
     id 'application'
+    id 'war'
 }
 
 repositories {
@@ -9,6 +10,17 @@ repositories {
 
 dependencies {
     implementation group: 'com.datumbox', name: 'lpsolve', version: '5.5.2.0'
+
+    // SPRING DEPENDENCIES
+    implementation "org.springframework:spring-core:${versionSpring}"
+    implementation "org.springframework:spring-context:${versionSpring}"
+    implementation "org.springframework:spring-webmvc:${versionSpring}"
+
+    // JSP and JSTL SUPPORT
+    implementation "org.eclipse.jetty:jetty-jsp:${versionJettyJsp}"
+    implementation "javax.servlet:jstl:${versionJstl}"
+    compileOnly "javax.servlet:javax.servlet-api:2.5"
+    compileOnly 'javax.servlet:jsp-api:2.0'
 
     compileOnly 'org.projectlombok:lombok:1.18.20'
     annotationProcessor 'org.projectlombok:lombok:1.18.20'
