@@ -44,27 +44,6 @@ public class ChessOptimisationModel extends AbstractOptimisationModel {
     }
 
     @Override
-    public void printResult(LpResult result) {
-
-        AsciiTable at = new AsciiTable();
-
-        at.addRule();
-        at.addRow("Solver status", result.getSolverStatus().toString());
-        at.addRule();
-
-        at.addRow("Profit ", result.getObjectiveValue());
-        at.addRule();
-
-        Map<Integer, Double> varMapping = result.getVariableResult();
-        for (Chess chess : chessList) {
-            Variable variable = chess.getNumberOfChessProducedVariable();
-            at.addRow(variable.getName(), varMapping.get(variable.getIndex()));
-            at.addRule();
-        }
-        System.out.println(at.render());
-    }
-
-    @Override
     protected List<Constraint> populateConstraints() {
         List<Constraint> constraints = new ArrayList<>();
         constraints.add(getLatheHourLimitConstraint());

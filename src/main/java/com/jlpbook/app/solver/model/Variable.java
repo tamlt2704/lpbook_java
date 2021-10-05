@@ -14,7 +14,7 @@ public class Variable {
     String name;
     VariableType variableType;
     float objectiveCoefficient;
-    float value;
+    double value;
     float LB;
     float UB;
 }

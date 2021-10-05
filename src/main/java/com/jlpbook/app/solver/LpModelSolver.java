@@ -28,7 +28,7 @@ public class LpModelSolver {
                     colNo[k] = term.getVariableIndex();
                     row[k++] = term.getCoeff();
                 }
-                solver.addConstraintex(nbConstraints, row, colNo, constraint.getSense().getValue(), constraint.getRHS());
+                solver.addConstraintex(nbVariableInConstraint, row, colNo, constraint.getSense().getValue(), constraint.getRHS());
                 log.info("constraint {}: {}", constrCount, constraint.getName());
                 solver.setRowName(constrCount++, constraint.getName());
             }
