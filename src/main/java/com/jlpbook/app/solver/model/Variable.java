@@ -13,7 +13,7 @@ public class Variable {
     int index;
     String name;
     VariableType variableType;
-    float objectiveCoefficient;
+    double objectiveCoefficient;
     double value;
     float LB;
     float UB;
